@@ -1,6 +1,6 @@
 # parameters
 
-P = 500000
+P = 500000       # newtons
 
 r_p = 540           # fork length mm
 r_hand = 60       # a to handle bar, mm
@@ -26,7 +26,7 @@ r_hand = 60 * k
 
 r_b = r_b * k
 
-alpha = alpha * c
+alpha = alpha * c     # to radians
 beta = beta * c
 
 gamma = gamma * c
@@ -62,18 +62,34 @@ F_dt = -F_tt * cos(beta) / cos(alpha)
 
 #4 seat tube
 
-# D_x + F_dt * sin(alpha) + F-tt * sin(beta) - F_st * sin (gamma - phi)
+# D_x + F_dt * sin(alpha) + F-tt * sin(beta) - F_st * sin(gamma - phi)
 
-F_st = ( D_x + F_dt * sin(alpha) + F-tt * sin(beta) ) / sin (gamma - phi)
+F_st = ( D_x + F_dt * sin(alpha) + F_tt * sin(beta) ) / sin(gamma - phi)
 
 
 # ------------------------------------- #
 
 # goal tube diameter
 
+# need params
+
 wall = 0.75 #mm
 
-# this should be a function
+fail = 54188
 
-# od = area * 2 / 3 / pi + 3 / 8  # taking mm^2 for area,  area = pi* (od^2 - id^2) = pi * (od^2 - (od-0.75)^2 )
+FOS = 2
 
+allow = fail / FOS
+
+
+# result:
+
+wall = wall * k    # wall in meters
+
+F = [F_tt, F_dt, F_st]
+
+area = F / allow
+
+od = area * 2 / 3 / pi + 3 / 8  # taking mm^2 for area,  area = pi* (od^2 - id^2) = pi * (od^2 - (od-0.75)^2 )
+
+od = od / k           # od in milimeters
