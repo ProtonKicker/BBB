@@ -1,18 +1,73 @@
 # parameters
 
+P = 500000
 
+r_p = 540           # fork length mm
+r_hand = 60       # a to handle bar, mm
+
+r_b = 30           # a to b, in mm
+
+alpha = 24     # degress
+beta = 27         # degress
+
+gamma = 60     # seat tube angle, deg
+phi = 50         # head tube angle, deg
+
+# ------------------------------------- #
+
+# unit conversion
+#need all the unit conversions here, mm to meters, deg to radians
+
+k = 1 / 1000
+c = pi / 180
+
+r_p = r_p * k         # to meters
+r_hand = 60 * k
+
+r_b = r_b * k
+
+alpha = alpha * c
+beta = beta * c
+
+gamma = gamma * c
+phi = phi * c
 
 # ------------------------------------- #
 
 #1 global
+   # point a = origin
+
+F_hand = r_p * P / r_hand
+D_x = F_hand - P
 
 
 #2 fork
+   # point a = origin
+
+# F_hand + F_b + F_a + P  = 0, assuming left is positive
+# F_hand * r_hand + F_b * r_b + P * r_p = 0
+
+F_b = (F_hand * r_hand + P * r_p) / r_b  # to left
+F_a = F_hand - F_b - P      # to right
 
 #3 frame
 
+F_net = ( - 1 ) * ( F_a + F_b )  # force on the triangle from the fork section, to the left
+
+# F_tt * sin (beta) + F_dt * sin(alpha) + F_net = 0
+# F_tt * cos (beta) + F_dt * cos(alpha) = 0
+
+F_tt = F_net / ( sin(beta) - cos(beta) * sin(alpha) )
+F_dt = -F_tt * cos(beta) / cos(alpha)
+
 #4 seat tube
 
+# D_x + F_dt * sin(alpha) + F-tt * sin(beta) - F_st * sin (gamma - phi)
+
+F_st = ( D_x + F_dt * sin(alpha) + F-tt * sin(beta) ) / sin (gamma - phi)
+
+
+# ------------------------------------- #
 
 # goal tube diameter
 
