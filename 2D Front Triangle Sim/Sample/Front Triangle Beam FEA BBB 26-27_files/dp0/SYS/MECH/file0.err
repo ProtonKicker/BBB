@@ -1,0 +1,53 @@
+/COM,ANSYS RELEASE 2026 R1           BUILD 26.1      UP20260202       18:24:42
+
+ *** WARNING ***                         ELAPSED TIME =       5.008   TIME= 18:24:43
+ Element shape checking is currently inactive.  Issue SHPP,ON or         
+ SHPP,WARN to reactivate, if desired.                                    
+
+ *** WARNING ***                         ELAPSED TIME =       5.014   TIME= 18:24:43
+ Overconstraint may occur for Lagrange multiplier or MPC based contact   
+ algorithm.                                                              
+
+ *** WARNING ***                         ELAPSED TIME =       5.014   TIME= 18:24:43
+ Certain contact elements (for example 188 & 197) overlap with other.    
+
+ *** WARNING ***                         ELAPSED TIME =       5.014   TIME= 18:24:43
+ Certain contact pairs (for example 4 & 2) overlap with other.           
+
+ *** WARNING ***                         ELAPSED TIME =       5.059   TIME= 18:24:43
+ Overconstraint may occur for Lagrange multiplier or MPC based contact   
+ algorithm.                                                              
+
+ *** WARNING ***                         ELAPSED TIME =       5.059   TIME= 18:24:43
+ Certain contact elements (for example 188 & 197) overlap with other.    
+
+ *** WARNING ***                         ELAPSED TIME =       5.059   TIME= 18:24:43
+ Certain contact pairs (for example 4 & 2) overlap with other.           
+
+ *** WARNING ***                         ELAPSED TIME =       5.072   TIME= 18:24:43
+ Overconstraint may occur for Lagrange multiplier or MPC based contact   
+ algorithm.                                                              
+
+ *** WARNING ***                         ELAPSED TIME =       5.072   TIME= 18:24:43
+ Certain contact elements (for example 188 & 197) overlap with other.    
+
+ *** WARNING ***                         ELAPSED TIME =       5.072   TIME= 18:24:43
+ Certain contact pairs (for example 4 & 2) overlap with other.           
+
+ *** WARNING ***                         ELAPSED TIME =       5.131   TIME= 18:24:43
+ The independent nodes of force-distributed-surface constraint (real ID  
+ 2) are found collinear.  However, because of rotation degrees of        
+ freedom existed in the underlying element(s), the moment component      
+ that is parallel to the collinear axis will be calculated based on      
+ those rotations.  You can increase the condition number threshold at    
+ seventh field (PZER) of this real ID if you find this pair should not   
+ be identified as collinear (default is 1e4).                            
+
+ *** WARNING ***                         ELAPSED TIME =       5.131   TIME= 18:24:43
+ The independent nodes of force-distributed-surface constraint (real ID  
+ 4) are found collinear.  However, because of rotation degrees of        
+ freedom existed in the underlying element(s), the moment component      
+ that is parallel to the collinear axis will be calculated based on      
+ those rotations.  You can increase the condition number threshold at    
+ seventh field (PZER) of this real ID if you find this pair should not   
+ be identified as collinear (default is 1e4).                            
